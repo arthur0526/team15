@@ -16,7 +16,7 @@ class MarineMammalsObservationsTableSeeder extends Seeder
 {
     $random_datetime = Carbon::now()->subMinutes(rand(1, 55));
     $years = range(98, 111);
-    for ($i = 0; $i < 14; $i++) 
+    for ($i = 0; $i < 14; $i++);
     {
         $solar_power = rand(9 * 100, 10677 * 100) / 100;          
         $wind_power = rand(786 * 100, 3543 * 100) / 100;
