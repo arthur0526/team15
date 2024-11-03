@@ -16,7 +16,8 @@ class MarineMammalsObservationsTableSeeder extends Seeder
 {
     $random_datetime = Carbon::now()->subMinutes(rand(1, 55));
     $years = range(98, 111);
-    for ($i = 0; $i < 14; $i++);
+    foreach ($years as $year) //循環98~111
+    for ($i = 0; $i < 1; $i++)
     {
         $solar_power = rand(9 * 100, 10677 * 100) / 100;          
         $wind_power = rand(786 * 100, 3543 * 100) / 100;
@@ -26,7 +27,7 @@ class MarineMammalsObservationsTableSeeder extends Seeder
         $waste_power = rand(3036 * 100, 3605 * 100) / 100;
         $total_power = $solar_power + $wind_power + $hydro_power + $biomass_power + $geothermal_power + $waste_power;
         DB::table('marine_mammals_observations')->insert([
-            'year' => $years,
+            'year' => $year,
             'solar_power' => $solar_power,
             'wind_power' => $wind_power,
             'hydro_power' => $hydro_power,
