@@ -16,8 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 
 function () {
     return view('welcome');
-});
+}
+);
 Route::get('/sdgs', 
 function () {
     return view('intro_sdgs');
-});
+}
+);
+Route::get('posts/{id}/{slug}', function ($id, $slug) {
+    return "Hello USER ID=" . $slug;
+})->where(['id' => '[0-9]+','slug' => '[A-Za-z]+'
+]);
